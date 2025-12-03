@@ -46,12 +46,12 @@ const Hero = () => {
             >
               了解更多
             </Link>
-            <Link
-              href="/newsletter"
+            <a
+              href="mailto:info@xishanghotel.com"
               className="px-8 py-4 bg-primary-700 text-white rounded-sm hover:bg-primary-800 transition-colors duration-200 text-lg font-medium"
             >
               联系我们
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

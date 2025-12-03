@@ -1,12 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslation } from '@/hooks/useTranslation'
 
 const Footer = () => {
-  const [email, setEmail] = useState('')
   const t = useTranslation()
 
   // Bing 地图搜索链接 - 使用酒店名称和地址组合搜索
@@ -17,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Section */}
           <div>
             <h3 className="text-black text-lg font-bold mb-6">{t.footer.contact}</h3>
@@ -47,44 +44,6 @@ const Footer = () => {
                 >
                   info@xishanghotel.com
                 </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Connect Section */}
-          <div>
-            <h3 className="text-black text-lg font-bold mb-6">{t.footer.connect}</h3>
-            <div>
-              <p className="text-gray-600 text-sm mb-4">
-                {t.footer.subscribeText}
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t.footer.subscribePlaceholder}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                />
-                <Link
-                  href={`/newsletter${email ? `?email=${encodeURIComponent(email)}` : ''}`}
-                  className="px-4 py-2 bg-gray-700 text-white rounded-sm hover:bg-gray-800 transition-colors flex items-center justify-center"
-                  aria-label={t.footer.subscribePlaceholder}
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
               </div>
             </div>
           </div>
